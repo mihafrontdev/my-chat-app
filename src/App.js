@@ -4,35 +4,35 @@ import Messages from "./Messages";
 import Input from "./Input";
 
 function randomName() {
-  const adjectives = [
-    "autumn", "hidden", "bitter", "misty", "silent", "empty", "dry", "dark",
-    "summer", "icy", "delicate", "quiet", "white", "cool", "spring", "winter",
-    "patient", "twilight", "dawn", "crimson", "wispy", "weathered", "blue",
-    "billowing", "broken", "cold", "damp", "falling", "frosty", "green", "long",
-    "late", "lingering", "bold", "little", "morning", "muddy", "old", "red",
-    "rough", "still", "small", "sparkling", "throbbing", "shy", "wandering",
-    "withered", "wild", "black", "young", "holy", "solitary", "fragrant",
-    "aged", "snowy", "proud", "floral", "restless", "divine", "polished",
-    "ancient", "purple", "lively", "nameless"
+  const pokemon = [
+    "bulbasaur", "charmander", "squrtle", "pikachu"
   ];
-  const nouns = [
-    "waterfall", "river", "breeze", "moon", "rain", "wind", "sea", "morning",
-    "snow", "lake", "sunset", "pine", "shadow", "leaf", "dawn", "glitter",
-    "forest", "hill", "cloud", "meadow", "sun", "glade", "bird", "brook",
-    "butterfly", "bush", "dew", "dust", "field", "fire", "flower", "firefly",
-    "feather", "grass", "haze", "mountain", "night", "pond", "darkness",
-    "snowflake", "silence", "sound", "sky", "shape", "surf", "thunder",
-    "violet", "water", "wildflower", "wave", "water", "resonance", "sun",
-    "wood", "dream", "cherry", "tree", "fog", "frost", "voice", "paper", "frog",
-    "smoke", "star"
+  const owner = [
+    "brok's", "ash's", "misty's", "gary's", "team rocket's"
   ];
-  const adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
-  const noun = nouns[Math.floor(Math.random() * nouns.length)];
-  return adjective + noun;
+  /* const ownerpic = [
+
+  ] */
+
+
+  const adjective = owner[Math.floor(Math.random() * owner.length)];
+  const noun = pokemon[Math.floor(Math.random() * pokemon.length)];
+  return adjective + " " + noun;
 }
 
 function randomColor() {
   return '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
+}
+
+function avatarPic () {
+  const slika = pokemon.value
+  
+    if (username.innerText === "bulbasaur") {
+      return (
+        <img src="https://static.wikia.nocookie.net/pokemontowerdefense/images/2/21/001Bulbasaur.png/revision/latest?cb=20130530130719"></img>
+      )
+    }
+    
 }
 
 class App extends Component {
@@ -41,6 +41,7 @@ class App extends Component {
     member: {
       username: randomName(),
       color: randomColor(),
+      img: avatarPic()
     }
   }
 
@@ -69,7 +70,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h1>My Chat App</h1>
+          <h1>Pokemon Chat</h1>
         </div>
         <Messages
           messages={this.state.messages}
