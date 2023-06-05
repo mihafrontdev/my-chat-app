@@ -24,7 +24,7 @@ function randomColor() {
   return '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
 }
 
-function avatarPic () {
+/* function avatarPic () {
   const slika = pokemon.value
   
     if (username.innerText === "bulbasaur") {
@@ -33,7 +33,7 @@ function avatarPic () {
       )
     }
     
-}
+} */
 
 class App extends Component {
   state = {
@@ -41,7 +41,7 @@ class App extends Component {
     member: {
       username: randomName(),
       color: randomColor(),
-      img: avatarPic()
+      /* img: avatarPic() */
     }
   }
 
